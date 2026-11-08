@@ -1,0 +1,53 @@
+stages: [quality, test, build, e2e]
+
+default:
+  image: node:22-bookworm
+  cache:
+    key:
+      files: [pnpm-lock.yaml]
+    paths: [.pnpm-store/]
+
+variables:
+  PNPM_HOME: /root/.local/share/pnpm
+  PNPM_STORE_DIR: $CI_PROJECT_DIR/.pnpm-store
+
+.install:
+  before_script: &install_setup
+    - corepack enable
+    - corepack prepare pnpm@12.17.0 --activate
+    - pnpm config set store-dir $PNPM_STORE_DIR
+    - pnpm install --frozen-lockfile
+
+quality:
+  stage: quality
+  before_script: *install_setup
+  script:
+    - pnpm lint
+    - pnpm format:check
+    - pnpm typecheck
+
+test:
+  stage: test
+  before_script: *install_setup
+  script:
+    - pnpm test
+
+build:
+  stage: build
+  before_script: *install_setup
+  script:
+    - pnpm build
+  artifacts:
+    paths: [dist/]
+    expire_in: 1 week
+
+e2e:
+  stage: e2e
+  image: mcr.microsoft.com/playwright:v1.65.0-noble
+  before_script: *install_setup
+  script:
+    - pnpm test:e2e
+  artifacts:
+    when: on_failure
+    paths: [playwright-report/]
+    expire_in: 1 week
