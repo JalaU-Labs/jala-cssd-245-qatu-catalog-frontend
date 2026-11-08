@@ -109,6 +109,19 @@ Open `http://localhost:8080`. Stop the service with `docker compose down`.
 | `pnpm test:e2e:report` | Opens the most recent Playwright HTML report.                        | Review E2E results.                        |
 | `pnpm screenshots`     | Generates the documentation screenshots from the production preview. | Regenerate report images.                  |
 
+### Deliverable PDF
+
+The lab deliverable PDF is generated from `docs/lab-report.md` using `pandoc` (Markdown to HTML) and Playwright's Chromium (HTML to PDF). It is not committed to the repository; `*.pdf` is gitignored.
+
+```bash
+pnpm screenshots   # regenerate the 9 screenshots
+pnpm pdf           # regenerate the PDF from the current report
+# or in one step:
+pnpm screenshots:pdf
+```
+
+The output path is `docs/individual-lab-week-6-diego-alejandro-botina-software-development-4.pdf`.
+
 ## Environment Variables
 
 | Variable            | Default                 | Applies when           | Notes                                                                                                              |
