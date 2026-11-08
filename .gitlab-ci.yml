@@ -13,8 +13,7 @@ variables:
 
 .install:
   before_script: &install_setup
-    - corepack enable
-    - corepack prepare pnpm@12.17.0 --activate
+    - npm install -g pnpm@12.17.0
     - pnpm config set store-dir $PNPM_STORE_DIR
     - pnpm install --frozen-lockfile
 
