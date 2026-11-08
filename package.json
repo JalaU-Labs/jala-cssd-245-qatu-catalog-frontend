@@ -27,7 +27,9 @@
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:report": "playwright show-report",
-    "screenshots": "node scripts/generate-screenshots.js"
+    "screenshots": "node scripts/generate-screenshots.js",
+    "pdf": "node scripts/generate-pdf.js",
+    "screenshots:pdf": "pnpm screenshots && pnpm pdf"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.0",
