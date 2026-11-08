@@ -74,7 +74,7 @@ export function mountCatalogApp({ root, store }) {
         createStateMessage(
           {
             variant: 'error',
-            title: 'Unable to load products',
+            title: 'Something went wrong',
             description: state.error?.message ?? 'Please try again.',
             actionLabel: 'Retry',
           },
