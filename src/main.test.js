@@ -1,8 +1,22 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('application bootstrap', () => {
   beforeEach(() => {
     vi.resetModules();
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          data: [],
+          meta: { page: 1, per_page: 12, total: 0, total_pages: 0 },
+        }),
+      }),
+    );
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
   });
 
   it('marks the root element ready when #app exists', async () => {
