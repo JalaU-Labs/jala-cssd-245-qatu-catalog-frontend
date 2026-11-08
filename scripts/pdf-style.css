@@ -1,0 +1,136 @@
+@page {
+  size: A4;
+  margin: 22mm 18mm 22mm 18mm;
+}
+
+body {
+  color: #1e293b;
+  font-family: 'DejaVu Sans', 'Noto Sans', sans-serif;
+  font-size: 11pt;
+  line-height: 1.55;
+}
+
+h1 {
+  margin: 0 0 12pt;
+  padding-bottom: 6pt;
+  border-bottom: 2px solid #1d4ed8;
+  color: #1d4ed8;
+  font-size: 22pt;
+  font-weight: bold;
+  page-break-after: avoid;
+}
+
+h2 {
+  margin: 18pt 0 8pt;
+  color: #1e40af;
+  font-size: 15pt;
+  font-weight: bold;
+  page-break-after: avoid;
+}
+
+h3 {
+  margin: 12pt 0 6pt;
+  color: #1e40af;
+  font-size: 12pt;
+  font-weight: bold;
+  page-break-after: avoid;
+}
+
+p {
+  margin: 0 0 8pt;
+}
+
+table {
+  width: 100%;
+  margin: 8pt 0 12pt;
+  border-collapse: collapse;
+  font-size: 10pt;
+}
+
+th {
+  border: 1px solid #cbd5e1;
+  padding: 6pt 8pt;
+  background: #eff6ff;
+  color: #1e40af;
+  font-weight: 600;
+  text-align: left;
+}
+
+td {
+  border: 1px solid #cbd5e1;
+  padding: 6pt 8pt;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+code {
+  border-radius: 3pt;
+  padding: 1pt 4pt;
+  background: #f1f5f9;
+  font-family: 'DejaVu Sans Mono', 'Noto Sans Mono', monospace;
+  font-size: 9.5pt;
+}
+
+pre {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 4pt;
+  padding: 8pt 10pt;
+  background: #f1f5f9;
+  font-size: 9.5pt;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+pre code {
+  padding: 0;
+  background: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 8pt auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 4pt;
+  page-break-inside: avoid;
+}
+
+blockquote {
+  margin: 8pt 0;
+  border-left: 3px solid #2563eb;
+  padding: 6pt 12pt;
+  background: #f8fafc;
+  color: #475569;
+}
+
+ul,
+ol {
+  margin: 0 0 8pt;
+  padding-left: 20pt;
+}
+
+li {
+  margin-bottom: 3pt;
+}
+
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+hr {
+  margin: 16pt 0;
+  border: none;
+  border-top: 1px solid #cbd5e1;
+}
+
+@media print {
+  a {
+    color: #1d4ed8;
+  }
+}
