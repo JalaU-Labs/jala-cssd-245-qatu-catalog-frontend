@@ -4,6 +4,6 @@
     "types": ["node"],
     "noEmit": true
   },
-  "include": ["e2e/**/*.js", "playwright.config.js"],
+  "include": ["e2e/**/*.js", "playwright.config.js", "scripts/**/*.js"],
   "exclude": ["node_modules", "dist", "coverage", "playwright-report", "test-results"]
 }
