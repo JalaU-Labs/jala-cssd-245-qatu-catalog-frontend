@@ -1,0 +1,61 @@
+# OS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.directory
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node and package managers
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+*.log
+.npmrc.local
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+.vite/
+.cache/
+
+# Vite artifacts
+vite.config.*.timestamp-*
+.vite-inspect/
+
+# Testing output
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+.vitest/
+
+# Biome cache
+.biome/
+
+# Docker artifacts
+*.tar
+.docker/
+
+# Misc
+.DS_Store
+Thumbs.db
+*.pid
+.history/
